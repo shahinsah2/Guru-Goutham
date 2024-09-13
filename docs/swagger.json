@@ -1,0 +1,608 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "API Documentation",
+    "description": "API for managing roles, brands, taxes, customers, leads, and more"
+  },
+  "host": "localhost:5000",
+  "basePath": "/api",
+  "schemes": ["http"],
+  "paths": {
+    "/taxes": {
+      "get": {
+        "summary": "Retrieve all taxes",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new tax",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Tax"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/brands": {
+      "get": {
+        "summary": "Retrieve all brands",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new brand",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Brand"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/product-categories": {
+      "get": {
+        "summary": "Retrieve all product categories",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new product category",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ProductCategory"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/stock-locations": {
+      "get": {
+        "summary": "Retrieve all stock locations",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new stock location",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/StockLocation"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/roles": {
+      "get": {
+        "summary": "Retrieve all roles",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new role",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Role"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/branches": {
+      "get": {
+        "summary": "Retrieve all branches",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new branch",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Branch"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "summary": "Retrieve all users",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new user",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/contact-types": {
+      "get": {
+        "summary": "Retrieve all contact types",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new contact type",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ContactType"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/customers": {
+      "get": {
+        "summary": "Retrieve all customers",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new customer",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Customer"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/leads": {
+      "get": {
+        "summary": "Retrieve all leads",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new lead",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Lead"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Tax": {
+      "type": "object",
+      "properties": {
+        "tax_code": {
+          "type": "string"
+        },
+        "tax_name": {
+          "type": "string"
+        },
+        "percentage": {
+          "type": "number"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "inactive"]
+        }
+      }
+    },
+    "Brand": {
+      "type": "object",
+      "properties": {
+        "brand_code": {
+          "type": "string"
+        },
+        "brand_name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "inactive"]
+        }
+      }
+    },
+    "ProductCategory": {
+      "type": "object",
+      "properties": {
+        "category_code": {
+          "type": "string"
+        },
+        "category_name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "inactive"]
+        }
+      }
+    },
+    "StockLocation": {
+      "type": "object",
+      "properties": {
+        "stockloc_code": {
+          "type": "string"
+        },
+        "stockloc_name": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "pincode": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "landmark": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "inactive"]
+        }
+      }
+    },
+    "Role": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "inactive"]
+        }
+      }
+    },
+    "Branch": {
+      "type": "object",
+      "properties": {
+        "branch_code": {
+          "type": "string"
+        },
+        "branch_name": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "pincode": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "landmark": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "inactive"]
+        }
+      }
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "login_id": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "role_id": {
+          "type": "integer"
+        },
+        "branch_id": {
+          "type": "integer"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone_number": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "pincode": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "landmark": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "inactive"]
+        }
+      }
+    },
+    "ContactType": {
+      "type": "object",
+      "properties": {
+        "contact_type_code": {
+          "type": "string"
+        },
+        "contact_type": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "inactive"]
+        }
+      }
+    },
+    "Customer": {
+      "type": "object",
+      "properties": {
+        "customer_code": {
+          "type": "string"
+        },
+        "customer_type": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "email_id": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "landmark": {
+          "type": "string"
+        },
+        "street": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "pincode": {
+          "type": "string"
+        },
+        "added_by": {
+          "type": "string"
+        },
+        "remarks": {
+          "type": "string"
+        },
+        "bank_name": {
+          "type": "string"
+        },
+        "bank_address": {
+          "type": "string"
+        },
+        "bank_ac_no": {
+          "type": "string"
+        },
+        "pan_no": {
+          "type": "string"
+        },
+        "bank_contact": {
+          "type": "string"
+        },
+        "bank_phone": {
+          "type": "string"
+        },
+        "others": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "inactive"]
+        }
+      }
+    },
+    "Lead": {
+      "type": "object",
+      "properties": {
+        "lead_code": {
+          "type": "string"
+        },
+        "lead_type": {
+          "type": "string"
+        },
+        "customer_code": {
+          "type": "string"
+        },
+        "generated_by": {
+          "type": "string"
+        },
+        "lead_mode": {
+          "type": "string"
+        },
+        "lead_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "lead_title": {
+          "type": "string"
+        },
+        "lead_details": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["open", "in progress", "closed", "cancelled"]
+        }
+      }
+    }
+  }
+}
